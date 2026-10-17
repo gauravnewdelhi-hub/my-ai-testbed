@@ -1,4 +1,5 @@
 {
+  "buildCommand": "npm run build:site",
   "outputDirectory": "dist",
   "headers": [
     {
