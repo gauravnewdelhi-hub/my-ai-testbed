@@ -44,6 +44,9 @@ The source-of-truth registry and site assignments are in
 The browser widget is in [`packages/agent-sdk/widget.js`](./packages/agent-sdk/widget.js).
 The SDK uses Shadow DOM, local deterministic responses, and no network service.
 It is a demo, not an authenticated production agent service.
+The deployed `/external-chat-test.html` route is a clean, separate-origin host
+page for manual embed compatibility checks; it intentionally has no built-in
+widget.
 
 ## Layout
 
