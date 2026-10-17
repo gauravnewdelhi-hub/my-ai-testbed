@@ -1,0 +1,24 @@
+{
+  "name": "Agent Testbed-ai-agent-testbed",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "build:site": "npm run build && node scripts/build-site.mjs",
+    "test": "node --test",
+    "test:check": "npm run build:site && npm test && node scripts/check-builds.mjs",
+    "dev:home": "node scripts/serve.mjs home-services",
+    "dev:store": "node scripts/serve.mjs ecom-store",
+    "dev:legal": "node scripts/serve.mjs legal-portal",
+    "dev:console": "node scripts/serve.mjs widget-harness"
+  }
+}

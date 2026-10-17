@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A fictional law firm demonstration site. No legal advice or real client intake is provided.">
+    <meta name="widget-url" content="__PUBLIC_WIDGET_URL__">
+    <title>Harbor & Pine | Fictional Legal Practice</title>
+    <link rel="stylesheet" href="/assets/site.css">
+    <script type="module" src="/assets/portal.js"></script>
+    <script type="module" async src="/packages/agent-sdk/widget.js" data-agent-widget data-site-id="legal-portal-demo" data-agent-id="legal-intake-demo"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/">Harbor <span>&</span> Pine <small>ATTORNEYS AT LAW · FICTIONAL</small></a>
+      <nav aria-label="Main navigation"><a href="#practice">Practice areas</a><a href="#team">Our team</a><a href="#contact">Contact demo</a></nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy"><p class="eyebrow">Thoughtful guidance, fictional practice</p><h1>Clear next steps begin with a conversation.</h1><p>Explore how a public-facing law firm website might explain its practice areas and consultation process. This demonstration does not provide legal advice.</p><a class="button-link" href="#practice">Explore practice areas</a></div>
+        <div class="hero-note"><span aria-hidden="true">§</span><p>Fictional firm.<br>General information only.</p></div>
+      </section>
+      <section id="practice" class="section">
+        <p class="eyebrow">Practice areas</p><h2>Support for life's important decisions.</h2>
+        <div class="practice-grid">
+          <article><span>01</span><h3>Family matters</h3><p>Example public information about family-related processes and planning.</p></article>
+          <article><span>02</span><h3>Small business</h3><p>Example information for fictional founders and locally owned businesses.</p></article>
+          <article><span>03</span><h3>Estate planning</h3><p>Example explanations of wills, planning documents, and common questions.</p></article>
+        </div>
+      </section>
+      <section id="team" class="section team-section">
+        <div><p class="eyebrow">Fictional attorneys</p><h2>Meet the demo team.</h2><p>These fictional profiles are provided only to make this sample website feel realistic.</p></div>
+        <div class="attorney-grid">
+          <article><div class="portrait" aria-hidden="true">MP</div><h3>Morgan Patel</h3><p>Family law · fictional profile</p></article>
+          <article><div class="portrait" aria-hidden="true">JL</div><h3>Jordan Lee</h3><p>Small business · fictional profile</p></article>
+          <article><div class="portrait" aria-hidden="true">AR</div><h3>Alex Rivera</h3><p>Estate planning · fictional profile</p></article>
+        </div>
+      </section>
+      <section id="contact" class="section contact">
+        <div><p class="eyebrow">Consultation flow demo</p><h2>Explore a safe, local-only inquiry.</h2><p>No message is sent. Select a broad topic only—do not enter personal, identifying, or confidential details.</p></div>
+        <form id="consultation-form">
+          <label for="topic">General topic
+            <select id="topic" name="topic"><option>Family matters</option><option>Small business</option><option>Estate planning</option><option>General website question</option></select>
+          </label>
+          <button class="button-link" type="submit">Preview demo confirmation</button>
+          <p id="form-result" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <section class="disclaimer" aria-label="Legal and privacy disclaimer"><strong>Important:</strong> This is a fictional website and simulated assistant. Nothing here is legal advice, creates a lawyer-client relationship, or sends an inquiry to a firm. Do not share confidential or sensitive information.</section>
+    </main>
+    <footer><span>Harbor & Pine is fictional.</span><span>Assistant messages remain in your browser and are deterministic examples.</span></footer>
+  </body>
+</html>

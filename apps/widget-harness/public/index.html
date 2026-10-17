@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Configure and test the Agent Testbed static demo agents and widget.">
+    <meta name="widget-url" content="__PUBLIC_WIDGET_URL__">
+    <title>Agent Testbed | Agent Test Console</title>
+    <link rel="stylesheet" href="/assets/console.css">
+    <script type="module" src="/assets/console.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">S</span><span>Agent Testbed <small>AGENT TEST CONSOLE</small></span></a>
+      <div class="top-actions"><span class="runtime-pill"><i></i> Simulation runtime</span><a href="/docs/INSTALLATION_GUIDE.md">Installation guide</a></div>
+    </header>
+    <main>
+      <section class="welcome">
+        <div><p class="eyebrow">Testing environment / Overview</p><h1>A clear view of your agent demos.</h1><p>Explore the registry, preview deterministic simulations, and generate an embed snippet once a public widget URL is configured.</p></div>
+        <div class="notice-card"><span aria-hidden="true">ⓘ</span><p><strong>Simulation only</strong><br>Messages run locally in this browser. No live AI provider or API is connected.</p></div>
+      </section>
+      <section aria-label="Agent counts" class="stats" id="stats"></section>
+      <div class="workspace">
+        <section class="catalog-panel">
+          <div class="panel-heading"><div><p class="eyebrow">Source-of-truth registry</p><h2>Agent catalog</h2></div><label class="search-label">Search agents<input id="search" type="search" placeholder="Name, capability…" autocomplete="off"></label></div>
+          <div id="agent-list" class="agent-list" aria-live="polite"></div>
+        </section>
+        <aside class="detail-panel" aria-label="Selected agent details">
+          <div id="agent-detail"></div>
+          <section class="preview">
+            <div class="preview-heading"><div><p class="eyebrow">Local preview</p><h3>Try the simulation</h3></div><span class="live-dot">No API</span></div>
+            <div id="preview-messages" class="preview-messages" role="log" aria-live="polite"></div>
+            <form id="preview-form" class="preview-form">
+              <label class="visually-hidden" for="preview-input">Your message</label>
+              <input id="preview-input" maxlength="1000" placeholder="Ask a demo question" autocomplete="off" required>
+              <button type="submit" aria-label="Send preview message">Send</button>
+            </form>
+            <p class="privacy-note">Do not enter real personal or confidential information.</p>
+          </section>
+        </aside>
+      </div>
+      <section id="install" class="install-panel">
+        <div class="panel-heading"><div><p class="eyebrow">Installation builder</p><h2>Generate a widget snippet</h2></div><span class="runtime-pill">Read-only configuration</span></div>
+        <p class="section-intro">Choose a configured site and its compatible agent. This tool only generates markup; it does not save settings or change the registry.</p>
+        <div class="controls">
+          <label>Demo website<select id="site-select"></select></label>
+          <label>Agent<select id="agent-select"></select></label>
+          <label>Theme<select id="theme-select"><option value="green">Green</option><option value="blue">Blue</option><option value="navy">Navy</option><option value="slate">Slate</option></select></label>
+          <label>Launcher position<select id="position-select"><option value="right">Bottom right</option><option value="left">Bottom left</option></select></label>
+          <label>Install status<select id="enabled-select"><option value="enabled">Enabled</option><option value="disabled">Disabled</option></select></label>
+        </div>
+        <div id="deployment-warning" class="deployment-warning" role="status"></div>
+        <div class="snippet-heading"><h3>HTML snippet</h3><button id="copy-button" class="secondary-button" type="button">Copy snippet</button></div>
+        <pre id="snippet" class="snippet" tabindex="0"></pre>
+        <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+        <div class="install-help">
+          <div><h3>Install and test</h3><ol id="install-steps"></ol></div>
+          <div><h3>Diagnostics</h3><ul class="diagnostics"><li><strong>Registry:</strong> loaded from the shared registry module.</li><li><strong>Widget:</strong> shared SDK is bundled; run the <a href="./test-page.html">standalone real-script test</a>.</li><li><strong>Runtime:</strong> deterministic local simulation.</li><li><strong>API connection:</strong> not applicable; this demo sends no network requests.</li><li><strong>Widget script:</strong> <span id="widget-url-status">not configured</span>.</li><li><strong>Target site:</strong> <span id="site-url-status">not configured</span> <a id="open-site-link" hidden>Open demo site</a>.</li><li><strong>Site and agent:</strong> <span id="selection-status"></span>.</li></ul></div>
+        </div>
+      </section>
+      <footer><span>Agent Testbed AI Testbed · Fictional demos · No live AI</span><nav aria-label="Documentation"><a href="/docs/AGENT_CATALOG.md">Catalog</a><a href="/docs/SECURITY.md">Security & privacy</a><a href="/docs/TROUBLESHOOTING.md">Troubleshooting</a></nav></footer>
+    </main>
+  </body>
+</html>

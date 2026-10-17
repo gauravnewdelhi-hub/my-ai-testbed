@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A fictional goods shop with a local-only demo cart and simulated shopping assistant.">
+    <meta name="widget-url" content="__PUBLIC_WIDGET_URL__">
+    <title>Northstar Goods | Fictional Shop</title>
+    <link rel="stylesheet" href="/assets/site.css">
+    <script type="module" src="/assets/shop.js"></script>
+    <script type="module" async src="/packages/agent-sdk/widget.js" data-agent-widget data-site-id="ecom-store-demo" data-agent-id="shopping-assistant-demo"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/">Northstar <span>Goods</span></a>
+      <nav aria-label="Main navigation"><a href="#shop">Shop</a><a href="#faq">FAQs</a><a href="#cart">Cart <span id="cart-count">0</span></a></nav>
+    </header>
+    <main>
+      <section class="hero">
+        <p class="eyebrow">A fictional demo shop</p>
+        <h1>Useful things for slower mornings.</h1>
+        <p>Explore a small catalogue of imaginary everyday goods. Add items to a browser-only cart and try the simulated shopping assistant.</p>
+        <a class="button-link" href="#shop">Explore the collection</a>
+      </section>
+      <section id="shop" class="content-section">
+        <div class="section-heading"><div><p class="eyebrow">The collection</p><h2>Demo products</h2></div><p>All prices and products are fictional. No checkout or payment is available.</p></div>
+        <div id="products" class="product-grid" aria-live="polite"></div>
+        <section id="product-detail" class="detail" aria-live="polite" tabindex="-1" hidden></section>
+      </section>
+      <section class="content-section columns">
+        <section id="faq" class="info-card">
+          <p class="eyebrow">Good to know</p><h2>Shipping & support</h2>
+          <details><summary>When does my order ship?</summary><p>Example shipping is 3–5 business days. No orders are placed in this demo.</p></details>
+          <details><summary>Can I return an item?</summary><p>These fictional goods have no real return policy or transaction. No purchase takes place.</p></details>
+          <details><summary>Does the demo cart save my order?</summary><p>No. Items exist only in your current browser page session and are not transmitted.</p></details>
+        </section>
+        <section id="cart" class="info-card cart-card">
+          <p class="eyebrow">Local demonstration</p><h2>Your cart</h2>
+          <div id="cart-items"><p>Your demo cart is empty.</p></div>
+          <p id="cart-total" class="cart-total">Demo total: $0.00</p>
+          <button id="clear-cart" class="secondary-button" type="button">Clear demo cart</button>
+          <p class="notice">No payments, real orders, or customer information are collected.</p>
+        </section>
+      </section>
+    </main>
+    <footer><span>Northstar Goods is fictional.</span><span>Shopping assistant responses are simulated and stay in this browser.</span></footer>
+  </body>
+</html>

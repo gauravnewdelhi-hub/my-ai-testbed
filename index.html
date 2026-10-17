@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A fictional home-services demonstration site for testing the Agent Testbed agent widget."
+    >
+    <meta name="widget-url" content="__PUBLIC_WIDGET_URL__">
+    <title>Northstar Home Services | Service Demo</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #16231f;
+        background: #f4f7f4;
+      }
+
+      * { box-sizing: border-box; }
+
+      body { margin: 0; }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 1.4rem 1.5rem;
+      }
+
+      .brand {
+        color: #174a3a;
+        font-size: 1.05rem;
+        font-weight: 750;
+        letter-spacing: -.02em;
+        text-decoration: none;
+      }
+
+      .test-label {
+        border: 1px solid #c5d7ce;
+        border-radius: 999px;
+        color: #38634f;
+        font-size: .75rem;
+        font-weight: 700;
+        padding: .45rem .75rem;
+      }
+
+      .topbar nav { display: flex; gap: 1rem; }
+      .topbar nav a { color: #38634f; font-size: .9rem; font-weight: 650; text-decoration: none; }
+
+      main { padding: 3.5rem 1.5rem 5rem; }
+
+      .hero {
+        max-width: 1120px;
+        margin: 0 auto;
+        border-radius: 28px;
+        padding: clamp(2rem, 7vw, 5.5rem);
+        background:
+          radial-gradient(ellipse at 83% 17%, rgb(215 238 221 / 55%), transparent 34%),
+          linear-gradient(135deg, #fff 0%, #edf5ef 100%);
+        box-shadow: 0 24px 70px rgb(26 53 39 / 9%);
+      }
+
+      .eyebrow {
+        color: #43735c;
+        font-size: .78rem;
+        font-weight: 800;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 1.2rem 0;
+        color: #153c30;
+        font-size: clamp(2.6rem, 7vw, 5.25rem);
+        letter-spacing: -.065em;
+        line-height: 1.02;
+      }
+
+      .intro {
+        max-width: 610px;
+        color: #52635a;
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+        line-height: 1.75;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        max-width: 1120px;
+        margin: 1.25rem auto 0;
+      }
+
+      .service {
+        border: 1px solid #e1e9e3;
+        border-radius: 18px;
+        padding: 1.35rem;
+        background: #fff;
+      }
+
+      .service h2 {
+        margin: 0 0 .55rem;
+        color: #234b3b;
+        font-size: 1rem;
+      }
+
+      .service p {
+        margin: 0;
+        color: #627068;
+        font-size: .93rem;
+        line-height: 1.6;
+      }
+
+      footer {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 1.5rem;
+        color: #69776f;
+        font-size: .84rem;
+      }
+
+      .inquiry {
+        max-width: 1120px;
+        margin: 1rem auto 0;
+        border: 1px solid #e1e9e3;
+        border-radius: 18px;
+        padding: clamp(1.25rem, 4vw, 2.25rem);
+        background: #fff;
+      }
+
+      .inquiry h2 { margin-top: 0; color: #234b3b; }
+      .inquiry p, .inquiry label { color: #52635a; line-height: 1.6; }
+      .inquiry form { display: flex; flex-wrap: wrap; align-items: end; gap: .8rem; }
+      .inquiry label { display: grid; gap: .35rem; font-weight: 650; }
+      .inquiry select, .inquiry button {
+        min-height: 44px;
+        border: 1px solid #b8c9bd;
+        border-radius: 9px;
+        padding: .55rem .75rem;
+        background: #fff;
+        color: #153c30;
+        font: inherit;
+      }
+      .inquiry button { border-color: #174a3a; background: #174a3a; color: #fff; cursor: pointer; font-weight: 700; }
+      .inquiry button:focus-visible, .inquiry select:focus-visible { outline: 3px solid #d69b33; outline-offset: 2px; }
+      .demo-notice { flex-basis: 100%; font-size: .9rem; }
+      #inquiry-result { min-height: 1.5em; color: #174a3a; font-weight: 650; }
+      .agent-status { max-width: 1120px; margin: 1rem auto; padding: 0 1.5rem; color: #38634f; font-size: .88rem; font-weight: 700; }
+
+      @media (max-width: 680px) {
+        .topbar { padding: 1rem; }
+        .topbar nav { order: 3; width: 100%; }
+        main { padding: 1.5rem 1rem 3rem; }
+        .hero { border-radius: 20px; }
+        .services { grid-template-columns: 1fr; }
+        .inquiry { margin: 1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/">Northstar Home Services</a>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#inquiry">Service inquiry</a>
+      </nav>
+      <span class="test-label">Simulated service demo</span>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Thoughtful home service, right on time</p>
+        <h1 id="hero-title">Comfort at home starts with a better conversation.</h1>
+        <p class="intro">
+          From seasonal maintenance to urgent repairs, our local team makes it
+          easy to get the help your home needs. Use the chat button to ask a
+          question or request an appointment.
+        </p>
+      </section>
+      <section id="services" class="services" aria-label="Our services">
+        <article class="service">
+          <h2>Heating and cooling</h2>
+          <p>Repairs, seasonal tune-ups, and help restoring everyday comfort.</p>
+        </article>
+        <article class="service">
+          <h2>Clear scheduling</h2>
+          <p>Tell us what is going on and find a convenient appointment time.</p>
+        </article>
+        <article class="service">
+          <h2>Local professionals</h2>
+          <p>Friendly service with clear communication from first hello to follow-up.</p>
+        </article>
+      </section>
+      <section id="inquiry" class="inquiry" aria-labelledby="inquiry-title">
+        <h2 id="inquiry-title">Explore a service inquiry</h2>
+        <p>This local demonstration does not book appointments, send messages, dispatch a technician, or make emergency calls.</p>
+        <form id="service-inquiry">
+          <label for="service-type">What would you like help with?
+            <select id="service-type" name="service-type">
+              <option value="maintenance">Seasonal maintenance</option>
+              <option value="heating">Heating or cooling question</option>
+              <option value="urgent">Urgent service question</option>
+            </select>
+          </label>
+          <button type="submit">Preview inquiry guidance</button>
+          <p class="demo-notice"><strong>Emergency safety:</strong> If anyone is in immediate danger, contact your local emergency services. This demo cannot dispatch help.</p>
+          <p id="inquiry-result" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <p id="agent-status" class="agent-status" role="status" aria-live="polite">Checking the configured assistant…</p>
+    </main>
+    <footer>
+      Northstar is fictional. All inquiry and assistant interactions are simulations; no information leaves this page.
+    </footer>
+
+    <script>
+      document.querySelector("#service-inquiry").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const kind = document.querySelector("#service-type").value;
+        const message = kind === "urgent"
+          ? "If there is immediate danger, contact local emergency services. No technician is dispatched by this demo."
+          : "Thanks for exploring. No appointment or service request was sent.";
+        document.querySelector("#inquiry-result").textContent = message;
+      });
+    </script>
+    <script type="module" src="/assets/home.js"></script>
+    <script type="module" async src="/packages/agent-sdk/widget.js" data-agent-widget data-site-id="northstar-home-demo" data-agent-id="Home Services-demo" data-development="true"></script>
+  </body>
+</html>

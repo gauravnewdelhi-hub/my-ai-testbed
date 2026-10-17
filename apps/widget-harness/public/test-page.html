@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="widget-url" content="__PUBLIC_WIDGET_URL__">
+    <title>Standalone Agent Widget Test</title>
+    <style>
+      body{max-width:760px;margin:4rem auto;padding:0 1.25rem;color:#263a35;font:1rem/1.7 system-ui,sans-serif}
+      h1{line-height:1.15} .notice{padding:1rem;border-left:4px solid #457b61;background:#eff5f0}
+      code{overflow-wrap:anywhere} a{color:#245a45}
+    </style>
+  </head>
+  <body>
+    <p><a href="/">← Agent Test Console</a></p>
+    <h1>Standalone widget installation test</h1>
+    <p class="notice"><strong>Fictional demonstration only.</strong> The chat is deterministic and browser-only. Do not enter personal or confidential information. This standalone page uses the Northstar demo site and does not contact a backend.</p>
+    <p>Expected configuration: <code>northstar-home-demo</code> / <code>Home Services-demo</code>. Two identical script elements below intentionally verify that duplicate initialization creates only one widget.</p>
+    <p>Open the launcher, ask “Can I schedule a service?”, close it with Escape, and confirm the page remains usable. For a separately hosted test, copy a configured HTTPS snippet from the console after deployment.</p>
+    <script type="module" async src="/packages/agent-sdk/widget.js" data-agent-widget data-site-id="northstar-home-demo" data-agent-id="Home Services-demo" data-development="true"></script>
+    <script type="module" async src="/packages/agent-sdk/widget.js" data-agent-widget data-site-id="northstar-home-demo" data-agent-id="Home Services-demo" data-development="true"></script>
+  </body>
+</html>
