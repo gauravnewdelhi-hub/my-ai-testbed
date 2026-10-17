@@ -1,4 +1,4 @@
-# Agent Testbed AI Agent Testbed
+# AI Agent Testbed
 
 A zero-dependency, static demonstration platform for testing four deterministic
 agent simulations through a reusable, accessible browser widget. It includes

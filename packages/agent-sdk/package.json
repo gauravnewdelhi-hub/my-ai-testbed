@@ -1,5 +1,5 @@
 {
-  "name": "@Agent Testbed/agent-sdk",
+  "name": "@agent-testbed/agent-sdk",
   "version": "1.0.0",
   "private": true,
   "type": "module",

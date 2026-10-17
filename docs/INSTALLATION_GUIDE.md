@@ -16,7 +16,7 @@ widget URL):
   src="https://YOUR-STABLE-HTTPS-HOST/packages/agent-sdk/widget.js"
   data-agent-widget
   data-site-id="northstar-home-demo"
-  data-agent-id="Home Services-demo"></script>
+  data-agent-id="home-services-assistant-demo"></script>
 ```
 
 `YOUR-STABLE-HTTPS-HOST` is a placeholder, not a working URL. The console does

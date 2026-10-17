@@ -7,8 +7,8 @@ export const widgetConfigurationSchema = Object.freeze({
 
 export const agents = [
   {
-    id: "Home Services-demo",
-    name: "Home Services Home Services Receptionist",
+    id: "home-services-assistant-demo",
+    name: "Home Services Receptionist",
     description: "A simulated receptionist for HVAC questions and service inquiries.",
     category: "Home services",
     version: "1.0.0",
@@ -100,8 +100,8 @@ export const sites = [
     publicUrl: "",
     deploymentPath: "/",
     enabled: true,
-    defaultAgentId: "Home Services-demo",
-    allowedAgentIds: ["Home Services-demo", "general-assistant-demo"]
+    defaultAgentId: "home-services-assistant-demo",
+    allowedAgentIds: ["home-services-assistant-demo", "general-assistant-demo"]
   },
   {
     id: "ecom-store-demo",

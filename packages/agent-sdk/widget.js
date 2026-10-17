@@ -1,7 +1,7 @@
 import { resolveConfiguration } from "../agent-registry/registry.js";
 import { simulationRuntime } from "../agent-registry/simulation.js";
 
-const rootKey = "__Agent TestbedAgentWidgetRoots";
+const rootKey = "__agentTestbedWidgetRoots";
 const styles = `
   :host { all: initial; color: #14251f; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
   *, *::before, *::after { box-sizing: border-box; }
@@ -32,7 +32,7 @@ const styles = `
 `;
 
 function report(message, development) {
-  if (development) console.warn(`[Agent Testbed widget] ${message}`);
+  if (development) console.warn(`[AI Agent widget] ${message}`);
 }
 
 function makeMessage(document, container, text, className) {
@@ -59,7 +59,7 @@ function mount(script) {
   registry.add(key);
 
   const host = document.createElement("div");
-  host.setAttribute("data-Agent Testbed-agent-widget", "");
+  host.setAttribute("data-agent-testbed-widget", "");
   const shadow = host.attachShadow({ mode: "open" });
   const style = document.createElement("style");
   style.textContent = styles;

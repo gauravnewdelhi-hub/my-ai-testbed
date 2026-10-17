@@ -60,10 +60,10 @@ Directory** `.`. Use the workspace command and output folder shown here:
 
 | App | Build command | Output directory |
 | --- | --- | --- |
-| Home Services | `npm run build --workspace=@Agent Testbed/home-services` | `apps/home-services/dist` |
-| Test Console | `npm run build --workspace=@Agent Testbed/widget-harness` | `apps/widget-harness/dist` |
-| E-commerce | `npm run build --workspace=@Agent Testbed/ecom-store` | `apps/ecom-store/dist` |
-| Legal Portal | `npm run build --workspace=@Agent Testbed/legal-portal` | `apps/legal-portal/dist` |
+| Home Services | `npm run build --workspace=@agent-testbed/home-services` | `apps/home-services/dist` |
+| Test Console | `npm run build --workspace=@agent-testbed/widget-harness` | `apps/widget-harness/dist` |
+| E-commerce | `npm run build --workspace=@agent-testbed/ecom-store` | `apps/ecom-store/dist` |
+| Legal Portal | `npm run build --workspace=@agent-testbed/legal-portal` | `apps/legal-portal/dist` |
 
 Each output includes the shared modules. For external embedding from one of
 these deployments, use its stable production domain as the widget origin and

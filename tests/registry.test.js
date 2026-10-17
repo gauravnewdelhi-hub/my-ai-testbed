@@ -20,36 +20,36 @@ test("registry contains unique, internally consistent demo agents and sites", ()
 });
 
 test("only enabled agent/site assignments resolve", () => {
-  assert.equal(resolveConfiguration("northstar-home-demo", "Home Services-demo").ok, true);
-  assert.equal(resolveConfiguration("missing-site", "Home Services-demo").ok, false);
-  assert.equal(resolveConfiguration("", "Home Services-demo").reason.includes("data-site-id"), true);
+  assert.equal(resolveConfiguration("northstar-home-demo", "home-services-assistant-demo").ok, true);
+  assert.equal(resolveConfiguration("missing-site", "home-services-assistant-demo").ok, false);
+  assert.equal(resolveConfiguration("", "home-services-assistant-demo").reason.includes("data-site-id"), true);
   assert.equal(resolveConfiguration("northstar-home-demo", "").reason.includes("data-agent-id"), true);
   assert.equal(resolveConfiguration("northstar-home-demo", "missing-agent").ok, false);
   assert.equal(resolveConfiguration("northstar-home-demo", "shopping-assistant-demo").ok, false);
-  const agent = agents.find((candidate) => candidate.id === "Home Services-demo");
+  const agent = agents.find((candidate) => candidate.id === "home-services-assistant-demo");
   agent.enabled = false;
-  assert.equal(resolveConfiguration("northstar-home-demo", "Home Services-demo").reason.includes("disabled"), true);
+  assert.equal(resolveConfiguration("northstar-home-demo", "home-services-assistant-demo").reason.includes("disabled"), true);
   agent.enabled = true;
   const site = sites.find((candidate) => candidate.id === "northstar-home-demo");
   site.enabled = false;
-  assert.equal(resolveConfiguration("northstar-home-demo", "Home Services-demo").ok, false);
+  assert.equal(resolveConfiguration("northstar-home-demo", "home-services-assistant-demo").ok, false);
   site.enabled = true;
 });
 
 test("snippet includes the configured identifiers, HTTPS URL and appearance", () => {
   const snippet = buildInstallSnippet({
     siteId: "northstar-home-demo",
-    agentId: "Home Services-demo",
+    agentId: "home-services-assistant-demo",
     scriptUrl: "https://widget.example.org/packages/agent-sdk/widget.js",
     configuration: { theme: "green", position: "left" }
   });
   assert.match(snippet, /data-site-id="northstar-home-demo"/);
-  assert.match(snippet, /data-agent-id="Home Services-demo"/);
+  assert.match(snippet, /data-agent-id="home-services-assistant-demo"/);
   assert.match(snippet, /https:\/\/widget\.example\.org\/packages\/agent-sdk\/widget\.js/);
   assert.match(snippet, /data-position="left"/);
   const escaped = buildInstallSnippet({
     siteId: "northstar-home-demo",
-    agentId: "Home Services-demo",
+    agentId: "home-services-assistant-demo",
     scriptUrl: "https://widget.example.org/packages/agent-sdk/widget.js",
     configuration: { title: 'Say "hi" <x>', welcome: "<img src=x onerror=alert(1)>" }
   });
@@ -58,17 +58,17 @@ test("snippet includes the configured identifiers, HTTPS URL and appearance", ()
   assert.doesNotMatch(escaped, /<img/);
   assert.throws(() => buildInstallSnippet({
     siteId: "northstar-home-demo",
-    agentId: "Home Services-demo",
+    agentId: "home-services-assistant-demo",
     scriptUrl: "http://widget.example.org/widget.js"
   }), /HTTPS/);
   assert.throws(() => buildInstallSnippet({
     siteId: "northstar-home-demo",
-    agentId: "Home Services-demo",
+    agentId: "home-services-assistant-demo",
     scriptUrl: "https://widget.example.org/widget.js"
   }), /HTTPS/);
   assert.throws(() => buildInstallSnippet({
     siteId: "northstar-home-demo",
-    agentId: "Home Services-demo",
+    agentId: "home-services-assistant-demo",
     scriptUrl: "https://user:pass@widget.example.org/packages/agent-sdk/widget.js"
   }), /HTTPS/);
   assert.throws(() => buildInstallSnippet({
@@ -79,7 +79,7 @@ test("snippet includes the configured identifiers, HTTPS URL and appearance", ()
 });
 
 test("messages receive contextual simulation and safety responses", () => {
-  assert.match(simulateReply("Home Services-demo", "urgent emergency"), /cannot dispatch/);
+  assert.match(simulateReply("home-services-assistant-demo", "urgent emergency"), /cannot dispatch/);
   assert.match(simulateReply("shopping-assistant-demo", "shipping times"), /fictional/);
   assert.match(simulateReply("legal-intake-demo", "Can I get legal advice?"), /not legal advice/);
   assert.match(simulateReply("general-assistant-demo", "hello"), /Hello/);

@@ -1,4 +1,4 @@
-# MASTER IMPLEMENTATION PROMPT — Agent Testbed AI AGENT TESTBED
+# MASTER IMPLEMENTATION PROMPT — AI AGENT TESTBED
 
 ## 1. Your role and mission
 
@@ -8,7 +8,7 @@ Build a complete, working, production-conscious AI Agent Testbed in this existin
 
 - GitHub repository: `gauravnewdelhi-hub/my-ai-testbed`
 - Existing Vercel project: `my-ai-testbed`
-- Repository purpose: publicly accessible testing environment for current and future Agent Testbed AI products, including Home Services AI.
+- Repository purpose: publicly accessible, brand-neutral testing environment for current and future AI agent products.
 
 The owner is nontechnical. All implementation, deployment, testing, configuration, troubleshooting instructions, and future maintenance procedures must be designed for someone who primarily uses a browser, a graphical interface, and copy-and-paste instructions.
 
@@ -183,7 +183,7 @@ Preferred public installation format:
   async
   src="https://YOUR-WIDGET-HOST/agent-widget.js"
   data-site-id="YOUR-SITE-ID"
-  data-agent-id="Home Services-demo">
+  data-agent-id="home-services-assistant-demo">
 </script>
 
 This is an illustrative format. Implement the final filename and attributes consistently throughout the code, documentation, generated snippets, and tests.
@@ -275,7 +275,7 @@ Separate agent metadata, widget presentation, and AI execution logic.
 
 Register at least these entries:
 
-1. `Home Services-demo` — home-services receptionist and lead-intake demonstration.
+1. `home-services-assistant-demo` — home-services receptionist and lead-intake demonstration.
 2. `shopping-assistant-demo` — fictional store support and product FAQ demonstration.
 3. `legal-intake-demo` — fictional law firm intake and general FAQ demonstration.
 4. `general-assistant-demo` — reusable generic assistant.
@@ -293,7 +293,7 @@ Define an adapter interface so different agents can later use:
 - Local deterministic simulations.
 - A server-side Gemini integration.
 - Other hosted LLM providers.
-- An internal Agent Testbed agent API.
+- An internal agent API.
 - Workflow or tool-based agents.
 - Voice agents.
 - Specialized agents with their own backend services.

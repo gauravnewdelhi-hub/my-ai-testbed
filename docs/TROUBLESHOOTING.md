@@ -29,7 +29,7 @@ Check that the host page uses `type="module"`, has `data-agent-widget`,
 `data-site-id`, and `data-agent-id`, and loads over a supported modern browser.
 The site and agent must be enabled and mutually assigned in
 `packages/agent-registry/registry.js`. Unknown, disabled, or incompatible
-configuration fails closed. Look for a `[Agent Testbed widget]` message if
+configuration fails closed. Look for an `[AI Agent widget]` message if
 `data-development="true"` is set. The widget does not make an API request.
 
 If loading from another origin, check the browser console for module CORS

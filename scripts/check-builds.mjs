@@ -18,7 +18,7 @@ for (const agent of agents) {
     }
   }
 }
-if (!simulateReply("Home Services-demo", "urgent furnace emergency").includes("cannot dispatch")) {
+if (!simulateReply("home-services-assistant-demo", "urgent furnace emergency").includes("cannot dispatch")) {
   throw new Error("Emergency simulation safety response is missing.");
 }
 if (!simulateReply("legal-intake-demo", "Can you give legal advice?").includes("not legal advice")) {

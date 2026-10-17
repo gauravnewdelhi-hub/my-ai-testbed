@@ -7,7 +7,7 @@ None calls a live AI model, network service, booking service, or business system
 
 | Stable ID | Name | Category | Assigned demo site | Capabilities | Limitations |
 | --- | --- | --- | --- | --- | --- |
-| `Home Services-demo` | Home Services Home Services Receptionist | Home services | `northstar-home-demo` | HVAC FAQs, inquiry guidance, emergency disclaimer | Cannot diagnose, book, dispatch, or call emergency services |
+| `home-services-assistant-demo` | Home Services Receptionist | Home services | `northstar-home-demo` | HVAC FAQs, inquiry guidance, emergency disclaimer | Cannot diagnose, book, dispatch, or call emergency services |
 | `shopping-assistant-demo` | Shop Support Assistant | E-commerce | `ecom-store-demo` | Fictional product, shipping, and cart FAQs | Fictional inventory; no order, payment, or account |
 | `legal-intake-demo` | Fictional Legal Intake Assistant | Legal | `legal-portal-demo` | Practice area FAQs and safe inquiry guidance | Not a lawyer; no legal advice, client relationship, or real intake |
 | `general-assistant-demo` | General Assistant | General | All three demo sites | General FAQs and demo navigation | Deterministic fallback, not a general-purpose live AI |

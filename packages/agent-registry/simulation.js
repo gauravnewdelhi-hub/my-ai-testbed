@@ -31,7 +31,7 @@ export function simulateReply(agentId, input, previousMessages = []) {
     if (/ship|deliver|arriv/.test(text)) return patterns.shop.shipping;
     if (/return|refund|exchange/.test(text)) return patterns.shop.return;
     if (/cart|checkout|pay|payment|order/.test(text)) return patterns.shop.cart;
-  } else if (/Home Services/.test(agentId)) {
+  } else if (/home-services-assistant/.test(agentId)) {
     if (/emergency|urgent|danger|smell gas|smoke/.test(text)) return patterns.home.emergency;
     if (/heat|heating|furnace|cold/.test(text)) return patterns.home.heat;
     if (/schedule|appointment|book|service|repair/.test(text)) return patterns.home.schedule;

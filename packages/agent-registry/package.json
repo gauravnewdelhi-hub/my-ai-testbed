@@ -1,5 +1,5 @@
 {
-  "name": "@Agent Testbed/agent-registry",
+  "name": "@agent-testbed/agent-registry",
   "version": "1.0.0",
   "private": true,
   "type": "module",
